@@ -6,20 +6,24 @@
 
 body {
     background-color: grey;
-    margin: 0 auto;
 }
 
 .container {
     max-width: 90%;
-    margin: 0 auto;
 }
 
 .slider-wrapper {
-    display: flex;
-    justify-content: center;
-    position: relative;
+    margin: 0 auto;
 
+    width: 845px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
     padding-top: 5%;
+    padding-bottom: 5%;
     background-color: khaki;
 }
 
@@ -27,4 +31,17 @@ body {
     color: #000000;
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
+}
+
+.dots {
+    position: absolute;
+    bottom: 8%;
+    right: 6%;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: lightgreen;
 }
