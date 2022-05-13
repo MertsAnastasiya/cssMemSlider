@@ -10,21 +10,34 @@ body {
 
 .container {
     max-width: 90%;
+    padding-top: 3%;
 }
 
 .slider-wrapper {
     margin: 0 auto;
 
-    width: 845px;
+    width: 60%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     
-    padding-top: 5%;
-    padding-bottom: 5%;
     background-color: khaki;
+    border-radius: 20px;
+}
+
+.slide {
+    width: 90%;
+}
+
+.slide-img {
+    width: 100%;
+    border-radius: 20px;
+    padding-bottom: 10px;
 }
 
 .slide-text {
