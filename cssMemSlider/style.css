@@ -48,13 +48,29 @@ body {
 
 .dots {
     position: absolute;
-    bottom: 8%;
-    right: 6%;
+    bottom: 10%;
+    right: 5%;
+
+    display: flex;
 }
 
 .dot {
     width: 20px;
     height: 20px;
+    margin: 2px;
+
     border-radius: 100%;
     background-color: lightgreen;
+}
+
+.dot:hover {
+    cursor: pointer;
+}
+
+.invisible {
+    display: none;
+}
+
+.active {
+    background-color: blue;
 }
