@@ -22,3 +22,9 @@ body {
     padding-top: 5%;
     background-color: khaki;
 }
+
+.slide-text {
+    color: #000000;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+}
