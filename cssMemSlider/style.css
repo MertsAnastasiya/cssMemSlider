@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: grey;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.slider-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    padding-top: 5%;
+    background-color: khaki;
+}
