@@ -1,5 +1,6 @@
 :root {
-    --textWidth: 30ch;
+    --textWidthCh: 30ch;
+    --textWidth: 30;
 }
 * {
     margin: 0;
@@ -56,8 +57,8 @@ body {
     white-space: nowrap;
     overflow: hidden;
     /* width: 30ch; */
-    width: var(--textWidth);
-    animation: printCursor 0.5s step-end infinite, printedText 1s steps(textWidthCss);
+    width: var(--textWidthCh);
+    animation: printCursor 0.5s step-end infinite, printedText 1.5s steps(var(--textWidth));
 }
 
 .dots {
@@ -107,6 +108,6 @@ body {
     }
     to {
         /* width: 30ch; */
-        width: var(--textWidth);
+        width: var(--textWidthCh);
     }
 }
