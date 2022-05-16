@@ -1,3 +1,6 @@
+:root {
+    --textWidth: 30ch;
+}
 * {
     margin: 0;
     padding: 0;
@@ -21,13 +24,15 @@ body {
     padding-bottom: 5%;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     position: relative;
     
     background-color: khaki;
     border-radius: 20px;
+
+    overflow: hidden;
 }
 
 .slide {
@@ -36,14 +41,23 @@ body {
 
 .slide-img {
     width: 100%;
+    height: 560px;
     border-radius: 20px;
     padding-bottom: 10px;
+    background: cover no-repeat;
 }
 
 .slide-text {
     color: #000000;
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
+
+    border-right: 2px solid #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    /* width: 30ch; */
+    width: var(--textWidth);
+    animation: printCursor 0.5s step-end infinite, printedText 1s steps(textWidthCss);
 }
 
 .dots {
@@ -73,4 +87,26 @@ body {
 
 .active {
     background-color: blue;
+}
+
+@keyframes printCursor {
+    0% {
+        border-color: #ffffff;
+    }
+    50% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: #ffffff;
+    }
+}
+
+@keyframes printedText {
+    from {
+        width: 0;
+    }
+    to {
+        /* width: 30ch; */
+        width: var(--textWidth);
+    }
 }
