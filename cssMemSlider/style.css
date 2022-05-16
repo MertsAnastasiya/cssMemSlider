@@ -113,4 +113,19 @@ body {
         width: var(--textWidthCh);
     }
 }
-  
+
+.animatedImg{
+    animation: RightToLeft 1s; 
+}
+ 
+@keyframes RightToLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    50%{
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}

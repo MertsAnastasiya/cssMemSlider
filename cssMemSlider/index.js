@@ -14,32 +14,57 @@ const slideSources = [
 ];
 
 let slideNumber = 0;
-const slides = document.getElementsByClassName('slide');
-const dots = document.getElementsByClassName('dot');
+const slide = document.getElementById('slide');
+const dots = document.getElementById('dots');
+
+const slideImg = document.createElement('img');
+slideImg.classList.add('slide-img');
+
+const slideText = document.createElement('p');
+slideText.classList.add('slide-text');
+
+slide.appendChild(slideImg);
+slide.appendChild(slideText);
 
 document.documentElement.style.setProperty('--textWidthCh', slideSources[0].text.length + 'ch');
 document.documentElement.style.setProperty('--textWidth', slideSources[0].text.length);
 
+
+const loadFirstSlide = () => {
+    
+    slideImg.setAttribute('src', slideSources[0].img);
+    slideImg.classList.add('animatedImg');
+    slideText.innerHTML = slideSources[0].text;
+
+    for (let i = 0; i < slideSources.length; i ++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        dot.addEventListener('click', () => showSlide(i));
+        dots.appendChild(dot);
+    }
+    setTimeout(removeClass, 1000);
+}
+
 const showSlide = (number) => {
     slideNumber = number;
-    if (number > slides.length) {
+    if (number > slideSources.length) {
         slideNumber = 0;
     }
     if (number < 0) {
-        slideNumber = slides.length;
+        slideNumber = slideSources.length;
     }
-
-    for (let i = 0; i < slides.length; i++) {
-        const textWidthCss = slides[i].children[1].innerHTML.length
-        document.documentElement.style.setProperty('--textWidthCh', textWidthCss + 'ch');
-        document.documentElement.style.setProperty('--textWidth', textWidthCss);
-        
-        if (i === slideNumber) {
-            slides[i].classList?.remove('invisible');
-            dots[i].classList.add('active');
-        } else {
-            slides[i].classList.add('invisible');
-            dots[i].classList?.remove('active');
-        }
-    }
+    const textWidthCss = slideSources[slideNumber].text.length;
+    document.documentElement.style.setProperty('--textWidthCh', textWidthCss + 'ch');
+    document.documentElement.style.setProperty('--textWidth', textWidthCss);
+    
+    slideImg.setAttribute('src', slideSources[slideNumber].img);
+    slideImg.classList.add('animatedImg');
+    slideText.innerHTML = slideSources[slideNumber].text;
+    setTimeout(removeClass, 1000);
 }
+
+const removeClass = () => {
+    slideImg.classList.remove('animatedImg');
+}
+
+loadFirstSlide();
