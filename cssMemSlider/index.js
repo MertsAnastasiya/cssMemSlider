@@ -17,7 +17,8 @@ let slideNumber = 0;
 const slides = document.getElementsByClassName('slide');
 const dots = document.getElementsByClassName('dot');
 
-document.documentElement.style.setProperty('--textWidth', slideSources[0].text.length + 'ch');
+document.documentElement.style.setProperty('--textWidthCh', slideSources[0].text.length + 'ch');
+document.documentElement.style.setProperty('--textWidth', slideSources[0].text.length);
 
 const showSlide = (number) => {
     slideNumber = number;
@@ -30,7 +31,8 @@ const showSlide = (number) => {
 
     for (let i = 0; i < slides.length; i++) {
         const textWidthCss = slides[i].children[1].innerHTML.length
-        document.documentElement.style.setProperty('--textWidth', textWidthCss + 'ch');
+        document.documentElement.style.setProperty('--textWidthCh', textWidthCss + 'ch');
+        document.documentElement.style.setProperty('--textWidth', textWidthCss);
         
         if (i === slideNumber) {
             slides[i].classList?.remove('invisible');

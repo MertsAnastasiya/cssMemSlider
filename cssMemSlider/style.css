@@ -56,7 +56,6 @@ body {
     border-right: 2px solid #ffffff;
     white-space: nowrap;
     overflow: hidden;
-    /* width: 30ch; */
     width: var(--textWidthCh);
     animation: printCursor 0.5s step-end infinite, printedText 1.5s steps(var(--textWidth));
 }
@@ -72,14 +71,18 @@ body {
 .dot {
     width: 20px;
     height: 20px;
-    margin: 2px;
+    margin-right: 5px;
 
     border-radius: 100%;
-    background-color: lightgreen;
+    border-color: #3498db;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    transition: all 150ms ease-in-out;
 }
 
 .dot:hover {
     cursor: pointer;
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
 }
 
 .invisible {
@@ -87,7 +90,7 @@ body {
 }
 
 .active {
-    background-color: blue;
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
 }
 
 @keyframes printCursor {
@@ -107,7 +110,7 @@ body {
         width: 0;
     }
     to {
-        /* width: 30ch; */
         width: var(--textWidthCh);
     }
 }
+  
