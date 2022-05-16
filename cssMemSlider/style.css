@@ -1,7 +1,7 @@
 :root {
     --textWidthCh: 30ch;
-    --textWidth: 30;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: grey;
+    background-color: #35363d;
 }
 
 .container {
@@ -30,7 +30,8 @@ body {
     align-items: center;
     position: relative;
     
-    background-color: khaki;
+    background-color:  #35363d;
+    border: 2px solid #414247;
     border-radius: 20px;
 
     overflow: hidden;
@@ -49,7 +50,7 @@ body {
 }
 
 .slide-text {
-    color: #000000;
+    color: #fbfbfc;
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
 
@@ -57,7 +58,6 @@ body {
     white-space: nowrap;
     overflow: hidden;
     width: var(--textWidthCh);
-    animation: printCursor 0.5s step-end infinite, printedText 1.5s steps(var(--textWidth));
 }
 
 .dots {
@@ -76,13 +76,14 @@ body {
     border-radius: 100%;
     border-color: #3498db;
     color: #fff;
-    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    box-shadow: 0 0 40px 40px #878891 inset, 0 0 0 0 #878891;
     transition: all 150ms ease-in-out;
 }
 
 .dot:hover {
     cursor: pointer;
-    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+    box-shadow: 0 0 10px 0 #878891 inset, 0 0 10px 4px #878891;
+    transform: scale(0.5);
 }
 
 .invisible {
@@ -90,7 +91,7 @@ body {
 }
 
 .active {
-    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+    box-shadow: 0 0 10px 0 #878891 inset, 0 0 10px 4px #878891;
 }
 
 @keyframes printCursor {
@@ -114,8 +115,12 @@ body {
     }
 }
 
-.animatedImg{
+.animatedImg {
     animation: RightToLeft 1s; 
+}
+
+.animatedText {
+    animation: printCursor 0.5s step-end infinite, printedText 1s;
 }
  
 @keyframes RightToLeft {

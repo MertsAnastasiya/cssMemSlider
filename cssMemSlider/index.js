@@ -1,7 +1,7 @@
 const slideSources = [
     {
         img: './assets/images/mem1.jpeg',
-        text:`I'm ready to get hurt again`,
+        text:`I'm ready to get hurt again!`,
     },
     {
         img: './assets/images/mem2.jpeg',
@@ -27,14 +27,14 @@ slide.appendChild(slideImg);
 slide.appendChild(slideText);
 
 document.documentElement.style.setProperty('--textWidthCh', slideSources[0].text.length + 'ch');
-document.documentElement.style.setProperty('--textWidth', slideSources[0].text.length);
-
 
 const loadFirstSlide = () => {
     
     slideImg.setAttribute('src', slideSources[0].img);
     slideImg.classList.add('animatedImg');
     slideText.innerHTML = slideSources[0].text;
+    slideText.classList.add('animatedText');
+    document.documentElement.style.setProperty('--textWidthCh', slideSources[0].text.length + 'ch');
 
     for (let i = 0; i < slideSources.length; i ++) {
         const dot = document.createElement('div');
@@ -42,10 +42,15 @@ const loadFirstSlide = () => {
         dot.addEventListener('click', () => showSlide(i));
         dots.appendChild(dot);
     }
-    setTimeout(removeClass, 1000);
+    setTimeout(removeClassImg, 1000);
+    setTimeout(removeClasstext, 4000);
 }
 
 const showSlide = (number) => {
+    const arrayDots = document.getElementsByClassName('dot');
+
+    document.documentElement.style.setProperty('--textWidthCh', 0 + 'ch');
+
     slideNumber = number;
     if (number > slideSources.length) {
         slideNumber = 0;
@@ -53,18 +58,28 @@ const showSlide = (number) => {
     if (number < 0) {
         slideNumber = slideSources.length;
     }
+
+    for(let i = 0; i < arrayDots.length; i++) {
+        arrayDots[i].classList?.remove('active');
+    }
+    arrayDots[slideNumber].classList.add('active');
+    
     const textWidthCss = slideSources[slideNumber].text.length;
     document.documentElement.style.setProperty('--textWidthCh', textWidthCss + 'ch');
-    document.documentElement.style.setProperty('--textWidth', textWidthCss);
-    
+ 
     slideImg.setAttribute('src', slideSources[slideNumber].img);
     slideImg.classList.add('animatedImg');
     slideText.innerHTML = slideSources[slideNumber].text;
-    setTimeout(removeClass, 1000);
+    slideText.classList.add('animatedText');
+    setTimeout(removeClassImg, 1000);
+    setTimeout(removeClasstext, 3000);
 }
 
-const removeClass = () => {
+const removeClassImg = () => {
     slideImg.classList.remove('animatedImg');
+}
+const removeClasstext = () => {
+    slideText.classList.remove('animatedText');
 }
 
 loadFirstSlide();
