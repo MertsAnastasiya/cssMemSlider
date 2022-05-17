@@ -5,11 +5,19 @@ const slideSources = [
     },
     {
         img: './assets/images/mem2.jpeg',
-        text:`Mem 2`,
+        text:`Make friends, make sales, make love - right order`,
     },
     {
         img: './assets/images/mem3.jpeg',
-        text:`Mem 3`,
+        text:`Create Mem`,
+    },
+    {
+        img: './assets/images/mem4.jpeg',
+        text:`What are mems?`,
+    },
+    {
+        img: './assets/images/mem5.jpeg',
+        text:`The world goes to hell - Not my problem`,
     },
 ];
 
