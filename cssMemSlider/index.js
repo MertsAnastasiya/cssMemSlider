@@ -25,14 +25,9 @@ let slideNumber = 0;
 const slide = document.getElementById('slide');
 const dots = document.getElementById('dots');
 
-const slideImg = document.createElement('img');
-slideImg.classList.add('slide-img');
+const slideImg = document.getElementById('img');
 
-const slideText = document.createElement('p');
-slideText.classList.add('slide-text');
-
-slide.appendChild(slideImg);
-slide.appendChild(slideText);
+const slideText = document.getElementById('p-text');
 
 document.documentElement.style.setProperty('--textWidthCh', slideSources[0].text.length + 'ch');
 

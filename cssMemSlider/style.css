@@ -25,9 +25,9 @@ body {
     padding-bottom: 5%;
 
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    /* justify-content: left; */
+    /* align-items: center; */
     position: relative;
     
     background-color:  #35363d;
@@ -59,12 +59,13 @@ body {
     overflow: hidden;
     width: var(--textWidthCh);
 }
+.text-dots-wpapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 .dots {
-    position: absolute;
-    bottom: 10%;
-    right: 5%;
-
     display: flex;
 }
 
@@ -134,3 +135,4 @@ body {
         transform: translateX(0%);
     }
 }
+
