@@ -12,7 +12,7 @@ const slideSources = [
         text:`Create Mem`,
     },
     {
-        img: './assets/images/mem4.jpeg',
+        img: './assets/images/mem4.png',
         text:`What are mems?`,
     },
     {
